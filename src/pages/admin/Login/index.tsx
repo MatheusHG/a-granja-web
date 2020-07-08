@@ -8,8 +8,8 @@ import logo from '../../../assets/logo.png';
 
 const LoginAdmin = () => {
   return (
-    <div id="page-home">
-      <div className="content">
+    <div id="login-page-home">
+      <div className="login-content">
 
         <img
           src={logo}
@@ -19,11 +19,11 @@ const LoginAdmin = () => {
           style={{margin: '10px'}}
         />
 
-        <div className="form-login-user">
+        <div className="login-user">
           <FiUser size='18px' />
           <input type="text" name="text" placeholder="User" />
         </div>
-        <div className="form-login-lock">
+        <div className="login-lock">
           <FiUnlock size='18px' />
           <input type="password" name="password" placeholder="Password" />
         </div>

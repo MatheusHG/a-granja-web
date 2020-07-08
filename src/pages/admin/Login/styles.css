@@ -1,4 +1,4 @@
-#page-home {
+#login-page-home {
     display: flex;
     flex-direction: row;
 
@@ -14,7 +14,7 @@
     overflow: hidden;
 }
 
-#page-home .content {
+#login-page-home .login-content {
     display: flex;
     flex-direction: column;
 
@@ -29,18 +29,18 @@
     -moz-box-shadow: 2px 2px 20px #000;
 }
 
-#page-home .content .form-login-user, .form-login-lock {
+#login-page-home .login-content .login-user, .login-lock {
     display: flex;
     align-items: center;
     padding: 10px;
 }
 
-#page-home .content .form-login-user {
+#login-page-home .login-content .login-user {
     margin-top: 8px;
     margin: 0 20px
 }
 
-#page-home .content input {
+#login-page-home .login-content input {
     border-top-width: 0px;
     border-left-width: 0px;
     border-right-width: 0px;
@@ -50,7 +50,7 @@
     padding: 3px;
 }
 
-#page-home .content a {
+#login-page-home .login-content a {
     background-color: black;
     
     width: 90%;
@@ -65,7 +65,7 @@
     margin: 20px;
 }
 
-#page-home .content a span {
+#login-page-home .login-content a span {
     display: block;
     background: rgba(66, 66, 66, 0.836);
     width: 50px;
@@ -77,13 +77,13 @@
     transition: 0.2s;
 }
 
-#page-home .content a strong {
+#login-page-home .login-content a strong {
     flex: 1;
     text-align: center;
     color: #FFF;
 }
 
-#page-home .content a:hover {
+#login-page-home .login-content a:hover {
     transition: 0.5s;
     background: rgba(14, 14, 14, 0.89);
 }

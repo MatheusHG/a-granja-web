@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Switch from 'react-switch';
 import {FiLogIn} from 'react-icons/fi';
 
@@ -12,8 +12,86 @@ const HomeAdmin = () => {
     photo: string;
   }
 
-
+  const [users, setUsers] = useState<User[]>([]);
   const [checked, setChecked] = useState<boolean>(false);
+
+  useEffect(() => {
+    setUsers([
+      {
+        name: 'Amelie',
+        photo: 'amelie.jpeg',
+      },
+      {
+        name: 'André',
+        photo: 'andre.jpeg',
+      },
+      {
+        name: 'Simplício',
+        photo: 'simplicio.jpeg',
+      },
+      {
+        name: 'Amelie',
+        photo: 'amelie.jpeg',
+      },
+      {
+        name: 'André',
+        photo: 'andre.jpeg',
+      },
+      {
+        name: 'Simplício',
+        photo: 'simplicio.jpeg',
+      },
+      {
+        name: 'Amelie',
+        photo: 'amelie.jpeg',
+      },
+      {
+        name: 'André',
+        photo: 'andre.jpeg',
+      },
+      {
+        name: 'Simplício',
+        photo: 'simplicio.jpeg',
+      },
+      {
+        name: 'Amelie',
+        photo: 'amelie.jpeg',
+      },
+      {
+        name: 'André',
+        photo: 'andre.jpeg',
+      },
+      {
+        name: 'Simplício',
+        photo: 'simplicio.jpeg',
+      },
+      {
+        name: 'Amelie',
+        photo: 'amelie.jpeg',
+      },
+      {
+        name: 'André',
+        photo: 'andre.jpeg',
+      },
+      {
+        name: 'Simplício',
+        photo: 'simplicio.jpeg',
+      },
+      {
+        name: 'Amelie',
+        photo: 'amelie.jpeg',
+      },
+      {
+        name: 'André',
+        photo: 'andre.jpeg',
+      },
+      {
+        name: 'Simplício',
+        photo: 'simplicio.jpeg',
+      },
+    ]);
+  }, []);
+
 
   const handleSwitch = (value: boolean) => {
     console.log('alternado', value);
@@ -42,7 +120,23 @@ const HomeAdmin = () => {
         </div>
         <div className="admin-grid">
           {
-
+            users.map((user) => (
+              <button
+                key={Math.random()}
+                className="participant-item"
+                type="button"
+              >
+                <img
+                  src={`${process.env.REACT_APP_API}/images/${user.photo}`}
+                  alt={user.name}
+                />
+                <h2>{user.name}</h2>
+                <div className="participant-check">
+                  <input type="checkbox"/>
+                  <p>SELECIONAR</p>
+                </div>
+              </ button>
+            ))
           }
         </div>
       </div>

@@ -1,4 +1,4 @@
-.container {
+.home-container {
     display: flex;
     flex-direction: column;
 
@@ -8,12 +8,12 @@
     align-items: center;
 }
 
-.container img {
+.home-container img {
     position: absolute;
     margin-top: 30px;
 }
 
-.container .img {
+.home-container .home-img {
     display: flex;
     position: absolute;
     width: 100%;
@@ -32,7 +32,7 @@
 }
 
 
-.container .img a {
+.home-container .home-img a {
     background-color: black;
     
     width: 90%;
@@ -47,7 +47,7 @@
     margin: 20px;
 }
 
-.container .img a span {
+.home-container .home-img a span {
     display: block;
     background: rgba(66, 66, 66, 0.836);
     width: 50px;
@@ -59,13 +59,13 @@
     transition: 0.2s;
 }
 
-.container .img a strong {
+.home-container .home-img a strong {
     flex: 1;
     text-align: center;
     color: #FFF;
 }
 
-.container .img a:hover {
+.home-container .home-img a:hover {
     transition: 0.5s;
     background: rgba(14, 14, 14, 0.89);
 }

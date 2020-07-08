@@ -8,8 +8,8 @@ import logo from './../../../assets/logo.png';
 
 const HomeUser = () => {
   return (
-    <div className="container">
-      <div className="img">
+    <div className="home-container">
+      <div className="home-img">
         <Link to="/votar">
           <strong>Votar</strong>
           <span>

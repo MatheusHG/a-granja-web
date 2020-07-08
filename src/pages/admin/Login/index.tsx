@@ -1,12 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {FiUser, FiUnlock, FiLogIn} from 'react-icons/fi';
-import {Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
+
+import api from '../../../services/api';
+import {login} from '../../../services/auth';
 
 import './styles.css';
 
 import logo from '../../../assets/logo.png';
 
 const LoginAdmin = () => {
+  const history = useHistory();
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async () => {
+    console.log('entrando...');
+    const response = await api.post('/login', {username, password});
+
+    const {token} = response.data;
+
+    login(token);
+    history.push('/admin');
+  };
+
   return (
     <div id="login-page-home">
       <div className="login-content">
@@ -21,19 +39,31 @@ const LoginAdmin = () => {
 
         <div className="login-user">
           <FiUser size='18px' />
-          <input type="text" name="text" placeholder="User" />
+          <input
+            type="text"
+            name="text"
+            placeholder="User"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
         </div>
         <div className="login-lock">
           <FiUnlock size='18px' />
-          <input type="password" name="password" placeholder="Password" />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
 
-        <Link to="/admin">
+        <button type="submit" onClick={handleSubmit}>
           <strong>Entrar</strong>
           <span>
             <FiLogIn size='20px' color='white' />
           </span>
-        </Link>
+        </button>
       </div>
     </div>
   );

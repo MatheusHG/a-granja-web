@@ -1,4 +1,4 @@
-.page-home {
+.admin-page-home {
     display: flex;
     flex-direction: column;
 
@@ -8,13 +8,13 @@
     background-size: cover;
 }
 
-.page-home button {
+.admin-page-home button {
     border: 0;
     background-color: transparent;
     cursor: pointer;
 }
 
-.page-home .header {
+.admin-page-home .admin-header {
     display: flex;
     flex: 0.5;
 
@@ -23,7 +23,7 @@
     padding: 0px 30px;
 }
 
-.page-home .box {
+.admin-page-home .admin-box {
     display: flex;
     flex-direction: column;
     flex: 2;
@@ -34,7 +34,7 @@
     justify-content: center;
 }
 
-.page-home .box .box-header {
+.admin-page-home .admin-box .admin-box-header {
     display: flex;
     /*flex: 1;*/
 
@@ -51,10 +51,10 @@
     padding: 0 15px;
 }
 
-.page-home .box .box-header button {
+.admin-page-home .admin-box .admin-box-header button {
     margin-left: 3%;
 }
 
-.page-home .box .box-header h1 {
+.admin-page-home .admin-box .admin-box-header h1 {
     margin: auto;
 }

@@ -7,15 +7,15 @@ import reset from './../../../assets/reset.svg';
 
 const HomeAdmin = () => {
   return (
-    <div className="page-home">
-      <div className="header">
+    <div className="admin-page-home">
+      <div className="admin-header">
         <h1>Hello World!</h1>
         <button>
           <FiLogIn size='80px' color='white' />
         </button>
       </div>
-      <div className="box">
-        <div className="box-header">
+      <div className="admin-box">
+        <div className="admin-box-header">
           <button>
             <img src={reset} alt="reset" width="50vh" height="50vh" />
           </button>

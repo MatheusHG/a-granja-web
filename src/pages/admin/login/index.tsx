@@ -1,6 +1,6 @@
 import React from 'react';
-import { FiUser, FiUnlock, FiLogIn, FiArrowRight } from 'react-icons/fi'
-import { Link } from 'react-router-dom';
+import {FiUser, FiUnlock, FiLogIn} from 'react-icons/fi';
+import {Link} from 'react-router-dom';
 
 import './styles.css';
 
@@ -25,7 +25,7 @@ const loginAdmin = () => {
         <Link to="/create-point">
           <strong>Entrar</strong>
           <span>
-            <FiArrowRight size='20px' color='white' />
+            <FiLogIn size='20px' color='white' />
           </span>
         </Link>
       </div>

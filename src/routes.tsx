@@ -5,7 +5,7 @@ import loginAdmin from './pages/admin/login';
 import homeAdmin from './pages/admin/home';
 
 import homeUser from './pages/user/home';
-import votingUser from './pages/user/Voting';
+import votingUser from './pages/user/voting';
 
 
 const Routes = () => {

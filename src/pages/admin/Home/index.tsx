@@ -1,6 +1,10 @@
 import React, {useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 import Switch from 'react-switch';
 import {FiLogIn} from 'react-icons/fi';
+
+import api from '../../../services/api';
+import {logout} from '../../../services/auth';
 
 import './styles.css';
 
@@ -11,12 +15,16 @@ const HomeAdmin = () => {
     name: string;
     photo: string;
   }
+  const history = useHistory();
 
   const [users, setUsers] = useState<User[]>([]);
   const [checked, setChecked] = useState<boolean>(false);
 
   useEffect(() => {
-    setUsers([]);
+    (async () => {
+      const response = await api.get('/users');
+      setUsers(response.data);
+    })();
   }, []);
 
 
@@ -34,7 +42,10 @@ const HomeAdmin = () => {
           width={100}
           height={40}
         />
-        <button>
+        <button type="button" onClick={() => {
+          logout();
+          history.push('/');
+        }}>
           <FiLogIn size='80px' color='white' />
         </button>
       </div>

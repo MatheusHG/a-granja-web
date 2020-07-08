@@ -1,14 +1,14 @@
 .voting-background {
   width: 100%;
   height: 100vh;
-  background-image: url('../../../assets/backgroundGrama.png');
-  background-size: contain;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .voting-container {
+  background-image: url('../../../assets/backgroundGrama.png');
+  background-size: cover;
   max-width: 1000px;
   width: 100%;
   height: 100%;
@@ -71,7 +71,7 @@
 }
 
 .voting-button {
-  margin-top: 100px;
+  margin-top: 15%;
   background-color: black;
   border: none;
   color: white;

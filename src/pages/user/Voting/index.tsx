@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 import './styles.css';
+import './response.css';
 
 function Voting() {
   interface User {

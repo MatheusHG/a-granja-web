@@ -35,13 +35,17 @@ function Voting() {
         <div className="voting-grid">
           {
             users.map((user) => (
-              <button key={Math.random()} className="voting-item" type="button">
+              <button
+                key={Math.random()}
+                className="participant-item"
+                type="button"
+              >
                 <img
                   src={`${process.env.REACT_APP_API}/images/${user.photo}`}
                   alt={user.name}
                 />
                 <h2>{user.name}</h2>
-                <div className="voting-check">
+                <div className="participant-check">
                   <input type="checkbox"/>
                   <p>VOTAR</p>
                 </div>

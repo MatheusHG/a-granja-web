@@ -20,6 +20,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   'rules': {
-    'require-jsdoc': 'off'
+    'require-jsdoc': 'off',
+    'linebreak-style': 'off'
   },
 };

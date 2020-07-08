@@ -57,7 +57,7 @@
   text-align: center;
 }
 
-.voting-check {
+.participant-check {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -66,7 +66,7 @@
   font-size: 18px;
 }
 
-.voting-check > input {
+.participant-check > input {
   margin-right: 10px;
 }
 

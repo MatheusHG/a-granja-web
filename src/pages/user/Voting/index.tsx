@@ -17,37 +17,40 @@ function Voting() {
         photo: 'amelie.jpeg',
       },
       {
-        name: 'Amelie',
-        photo: 'amelie.jpeg',
+        name: 'André',
+        photo: 'andre.jpeg',
       },
       {
-        name: 'Amelie',
-        photo: 'amelie.jpeg',
+        name: 'Simplício',
+        photo: 'simplicio.jpeg',
       },
     ]);
   }, []);
 
   return (
-    <section>
-      <div>
-        <h1>QUEM VOCÊ DESEJA ELIMINAR DA GRANJA?</h1>
+    <section className="voting-background">
+      <div className="voting-container">
+        <h1 className="voting-title">QUEM VOCÊ DESEJA ELIMINAR DA GRANJA?</h1>
 
-        <div>
+        <div className="voting-grid">
           {
             users.map((user) => (
-              <div key={Math.random()}>
-                <img src={user.photo} alt={user.name}/>
+              <button key={Math.random()} className="voting-item" type="button">
+                <img
+                  src={`${process.env.REACT_APP_API}/images/${user.photo}`}
+                  alt={user.name}
+                />
                 <h2>{user.name}</h2>
-                <div>
+                <div className="voting-check">
                   <input type="checkbox"/>
                   <p>VOTAR</p>
                 </div>
-              </div>
+              </ button>
             ))
           }
         </div>
 
-        <button type="submit">
+        <button type="submit" className="voting-button">
           Votar
         </button>
       </div>

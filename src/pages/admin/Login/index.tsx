@@ -6,12 +6,18 @@ import './styles.css';
 
 import logo from '../../../assets/logo.png';
 
-const loginAdmin = () => {
+const LoginAdmin = () => {
   return (
     <div id="page-home">
       <div className="content">
 
-        <img src={logo} alt="Granja" width="180vw" height="180vh" style={{margin: '10px'}} />
+        <img
+          src={logo}
+          alt="Granja"
+          width="180vw"
+          height="180vh"
+          style={{margin: '10px'}}
+        />
 
         <div className="form-login-user">
           <FiUser size='18px' />
@@ -33,4 +39,4 @@ const loginAdmin = () => {
   );
 };
 
-export default loginAdmin;
+export default LoginAdmin;

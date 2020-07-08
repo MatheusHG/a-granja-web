@@ -6,7 +6,7 @@ import './styles.css';
 
 import logo from './../../../assets/logo.png';
 
-const homeUser = () => {
+const HomeUser = () => {
   return (
     <div className="container">
       <div className="img">
@@ -23,4 +23,4 @@ const homeUser = () => {
   );
 };
 
-export default homeUser;
+export default HomeUser;

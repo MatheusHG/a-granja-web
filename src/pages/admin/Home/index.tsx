@@ -5,7 +5,7 @@ import './styles.css';
 
 import reset from './../../../assets/reset.svg';
 
-const homeAdmin = () => {
+const HomeAdmin = () => {
   return (
     <div className="page-home">
       <div className="header">
@@ -26,4 +26,4 @@ const homeAdmin = () => {
   );
 };
 
-export default homeAdmin;
+export default HomeAdmin;

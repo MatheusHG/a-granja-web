@@ -21,6 +21,8 @@ module.exports = {
   ],
   'rules': {
     'require-jsdoc': 'off',
-    'linebreak-style': 'off'
+    'linebreak-style': 'off',
+    'react/prop-types': 'off',
+    'no-unused-vars': 'off'
   },
 };

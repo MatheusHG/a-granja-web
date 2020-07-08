@@ -37,13 +37,16 @@
   width: 80%;
   max-width: 200px;
   min-height: 200px;
+  max-height: 300px;
   border-radius:15px;
-  margin: auto;
-  margin-bottom: 30px;
   border: 1px solid gray;
   background-color: white;
   overflow: hidden;
   transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .participant-item:hover {

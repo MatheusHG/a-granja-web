@@ -1,0 +1,13 @@
+@media (max-width: 560px) {
+    .voting-title {
+        font-size: 20px;
+    }
+    .voting-grid {
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+    .participant-item {
+        width: 50%;
+        min-height: 170px;
+    }
+}

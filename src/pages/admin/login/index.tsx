@@ -22,7 +22,7 @@ const loginAdmin = () => {
           <input type="password" name="password" placeholder="Password" />
         </div>
 
-        <Link to="/create-point">
+        <Link to="/admin">
           <strong>Entrar</strong>
           <span>
             <FiLogIn size='20px' color='white' />

@@ -24,8 +24,16 @@ const User = (
         src={`${process.env.REACT_APP_API}/images/${user.photo}`}
         alt={user.name}
       />
-      <h2>{user.name}</h2>
-      <div className="participant-check">
+      <h2 style={{margin: 5}}>{user.name}</h2>
+      <div style={{
+        fontSize: 18,
+        border: '1px solid red',
+        borderRadius: '8px',
+        padding: '3px'}}
+      >
+        <p><strong>0</strong> votos</p>
+      </div>
+      <div className="participant-check" style={{padding: 5}}>
         <input type="checkbox" checked={checked} readOnly/>
         <p>SELECIONAR</p>
       </div>

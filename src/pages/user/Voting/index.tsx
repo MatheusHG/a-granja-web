@@ -3,6 +3,8 @@ import React, {useState, useEffect} from 'react';
 import './styles.css';
 import './response.css';
 
+import modalSuccess from './components/closed';
+
 function Voting() {
   interface User {
     name: string;

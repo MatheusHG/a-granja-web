@@ -20,7 +20,10 @@ const close = () => {
         height={400}
         width={400}
       />
-      <h1>Olá</h1>
+      <h1>Votações fora do ar!</h1>
+      <h3>
+        Aguarde a apuração dos votos ou a inicialização do novo paredão...
+      </h3>
     </div>
   );
 };

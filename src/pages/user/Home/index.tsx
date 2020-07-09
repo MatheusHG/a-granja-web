@@ -1,12 +1,22 @@
 import React from 'react';
-import {FiLogIn, FiMonitor} from 'react-icons/fi';
+import {FiMonitor} from 'react-icons/fi';
 import {Link} from 'react-router-dom';
+import Lottie from 'react-lottie';
+import animationData from './click.json';
 
 import './styles.css';
 
 import logo from './../../../assets/logo.png';
 
 const HomeUser = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
   return (
     <div className="home-container">
       <Link to="/login" className="home-admin">
@@ -17,7 +27,11 @@ const HomeUser = () => {
         <Link to="/votar">
           <strong>Votar</strong>
           <span>
-            <FiLogIn size='20px' color='white' />
+            <Lottie
+              options={defaultOptions}
+              height={60}
+              width={60}
+            />
           </span>
         </Link>
       </div>

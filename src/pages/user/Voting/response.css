@@ -1,5 +1,5 @@
 
-@media (max-width: 560px) {
+@media (max-width: 670px) {
     .voting-container {
         height: auto;
     }
@@ -10,14 +10,11 @@
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px;
     }
-    .participant-item {
-        margin: 0;
-    }
     .voting-button {
         padding:15px;
     }
 }
-@media (max-width: 500px) {
+@media (max-width: 520px) {
     .voting-grid {
         grid-template-columns: 1fr;
     }

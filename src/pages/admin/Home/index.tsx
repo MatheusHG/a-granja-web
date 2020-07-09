@@ -3,21 +3,20 @@ import {useHistory} from 'react-router-dom';
 import Switch from 'react-switch';
 import {FiLogIn} from 'react-icons/fi';
 
+import {User as UserInterface} from '../../../interfaces';
 import api from '../../../services/api';
 import {logout} from '../../../services/auth';
+import User from './components/User';
 
 import './styles.css';
 
 import reset from './../../../assets/reset.svg';
 
 const HomeAdmin = () => {
-  interface User {
-    name: string;
-    photo: string;
-  }
   const history = useHistory();
 
-  const [users, setUsers] = useState<User[]>([]);
+  const [users, setUsers] = useState<UserInterface[]>([]);
+  const [chosen, setChosen] = useState<UserInterface[]>([]);
   const [checked, setChecked] = useState<boolean>(false);
 
   useEffect(() => {
@@ -27,6 +26,16 @@ const HomeAdmin = () => {
     })();
   }, []);
 
+  useEffect(() => console.log(chosen), [chosen]);
+
+  const handleSelect = (user: UserInterface, remove: boolean) => {
+    if (remove) {
+      const newChosen = chosen.filter((item) => item._id !== user._id);
+      setChosen(newChosen);
+    } else {
+      setChosen([...chosen, user]);
+    }
+  };
 
   const handleSwitch = (value: boolean) => {
     console.log('alternado', value);
@@ -58,23 +67,9 @@ const HomeAdmin = () => {
         </div>
         <div className="admin-grid">
           {
-            users.map((user) => (
-              <button
-                key={Math.random()}
-                className="participant-item"
-                type="button"
-              >
-                <img
-                  src={`${process.env.REACT_APP_API}/images/${user.photo}`}
-                  alt={user.name}
-                />
-                <h2>{user.name}</h2>
-                <div className="participant-check">
-                  <input type="checkbox"/>
-                  <p>SELECIONAR</p>
-                </div>
-              </ button>
-            ))
+            users.map((user: UserInterface) =>
+              <User onClick={handleSelect} user={user} key={user._id}/>,
+            )
           }
         </div>
       </div>

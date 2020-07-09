@@ -10,6 +10,7 @@ import {logout} from '../../../services/auth';
 import User from './components/User';
 
 import './styles.css';
+import './response.css';
 
 import reset from './../../../assets/reset.svg';
 

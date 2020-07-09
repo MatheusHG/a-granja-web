@@ -1,13 +1,27 @@
+
 @media (max-width: 560px) {
+    .voting-container {
+        height: auto;
+    }
     .voting-title {
         font-size: 20px;
     }
     .voting-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-gap: 20px;
     }
     .participant-item {
-        width: 50%;
-        min-height: 170px;
+        margin: 0;
+    }
+    .voting-button {
+        padding:15px;
+    }
+}
+@media (max-width: 500px) {
+    .voting-grid {
+        grid-template-columns: 1fr;
+    }
+    .participant-item {
+        margin: auto;
     }
 }

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import Modal from 'react-responsive-modal';
 import {useHistory} from 'react-router-dom';
 import Switch from 'react-switch';
 import {FiLogIn} from 'react-icons/fi';
@@ -18,6 +19,7 @@ const HomeAdmin = () => {
   const [users, setUsers] = useState<UserInterface[]>([]);
   const [chosen, setChosen] = useState<UserInterface[]>([]);
   const [checked, setChecked] = useState<boolean>(false);
+  const [alert, setAlert] = useState<boolean>(false);
 
   useEffect(() => {
     (async () => {
@@ -25,8 +27,6 @@ const HomeAdmin = () => {
       setUsers(response.data);
     })();
   }, []);
-
-  useEffect(() => console.log(chosen), [chosen]);
 
   const handleSelect = (user: UserInterface, remove: boolean) => {
     if (remove) {
@@ -60,7 +60,7 @@ const HomeAdmin = () => {
       </div>
       <div className="admin-box">
         <div className="admin-box-header">
-          <button>
+          <button type="button" onClick={() => setAlert(true)}>
             <img src={reset} alt="reset" width="50vh" height="50vh" />
           </button>
           <h1>PARTICIPANTES</h1>
@@ -73,6 +73,26 @@ const HomeAdmin = () => {
           }
         </div>
       </div>
+
+      <Modal open={alert} onClose={() => setAlert(false)} center>
+        <div className="modal-reset">
+          <h1>Realmente deseja zerar a votação?</h1>
+          <div>
+            <button
+              id="alert-confirm-modal"
+              type="button"
+              onClick={() => console.log('simn')}
+            >
+            SIM
+            </button>
+            <button
+              type="button"
+              onClick={() => setAlert(false)}>
+              NÃO
+            </button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };

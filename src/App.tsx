@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import 'react-responsive-modal/styles.css';
 
 import Routes from './routes';
 

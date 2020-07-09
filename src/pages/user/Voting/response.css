@@ -1,6 +1,7 @@
 
 @media (max-width: 670px) {
     .voting-container {
+        width: auto;
         height: auto;
     }
     .voting-title {

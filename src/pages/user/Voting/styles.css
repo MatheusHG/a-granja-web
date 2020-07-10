@@ -127,7 +127,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: auto;
+  margin-bottom: 100px;
 }
 
 .closed-container h1 {

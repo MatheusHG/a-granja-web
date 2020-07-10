@@ -43,44 +43,51 @@ function Voting() {
   const reCaptchaSecret = process.env.REACT_APP_SECRET || '';
 
   return (
-    !isOut ?
-    (
-      <section className="voting-background">
-        <div className="voting-container">
-          <h1 className="voting-title">QUEM VOCÊ DESEJA ELIMINAR DA GRANJA?</h1>
+    <section className="voting-background">
+      {
+          !isOut ? (
+            <div className="voting-container">
+              <h1 className="voting-title">
+                QUEM VOCÊ DESEJA ELIMINAR DA GRANJA?
+              </h1>
 
-          <div className="voting-grid">
-            {
-              users.map((user) => (
-                <User
-                  user={user}
-                  onClick={handleParticipant}
-                  key={user._id}
-                  showPoints={false}
-                  disable={false}
-                  mode="voting"
-                  selectedUser={selected}
+              <div className="voting-grid">
+                {
+                  users.map((user) => (
+                    <User
+                      user={user}
+                      onClick={handleParticipant}
+                      key={user._id}
+                      showPoints={false}
+                      disable={false}
+                      mode="voting"
+                      selectedUser={selected}
+                    />
+                  ))
+                }
+              </div>
+
+              <div className="recaptcha">
+                <ReCAPTCHA
+                  sitekey={reCaptchaSecret}
+                  onChange={handleCaptcha}
                 />
-              ))
-            }
-          </div>
+              </div>
 
-          <div className="recaptcha">
-            <ReCAPTCHA
-              sitekey={reCaptchaSecret}
-              onChange={handleCaptcha}
-            />
-          </div>
-
-          <button type="submit" className="voting-button" onClick={handleVote}>
-          Votar
-          </button>
-        </div>
-      </section>
-    ) :
-    (
-      <ClosedVoting />
-    )
+              <button
+                type="submit"
+                className="voting-button"
+                onClick={handleVote}
+              >
+                Votar
+              </button>
+            </div>
+              ) :
+              (
+            <ClosedVoting />
+              )
+      }
+    </section>
   );
 };
 

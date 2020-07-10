@@ -22,11 +22,13 @@ const HomeAdmin = () => {
   const [checked, setChecked] = useState<boolean>(false);
   const [alert, setAlert] = useState<boolean>(false);
 
+  const getParticipants = async () => {
+    const response = await api.get('/users');
+    setUsers(response.data);
+  };
+
   useEffect(() => {
-    (async () => {
-      const response = await api.get('/users');
-      setUsers(response.data);
-    })();
+    getParticipants();
   }, []);
 
   const handleSelect = (user: UserInterface, remove: boolean) => {
@@ -82,7 +84,11 @@ const HomeAdmin = () => {
             <button
               id="alert-confirm-modal"
               type="button"
-              onClick={() => console.log('simn')}
+              onClick={async () => {
+                await api.delete('/points');
+                setAlert(false);
+                getParticipants();
+              }}
             >
             SIM
             </button>

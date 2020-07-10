@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {FiUser, FiUnlock, FiLogIn} from 'react-icons/fi';
 import {useHistory} from 'react-router-dom';
 
 import api from '../../../services/api';
-import {login} from '../../../services/auth';
+import {login, isAuthenticated} from '../../../services/auth';
 
 import './styles.css';
 
@@ -24,6 +24,10 @@ const LoginAdmin = () => {
     login(token);
     history.push('/admin');
   };
+
+  useEffect(() => {
+    if (isAuthenticated()) history.push('/admin');
+  }, []);
 
   return (
     <div id="login-page-home">

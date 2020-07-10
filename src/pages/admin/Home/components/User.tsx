@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import {User as UserInterface} from '../../../../interfaces';
 
@@ -9,6 +9,10 @@ const User = (
     },
 ) => {
   const [checked, setChecked] = useState<boolean>(false);
+
+  useEffect(() => {
+    setChecked(user.marked);
+  }, []);
 
   return (
     <button

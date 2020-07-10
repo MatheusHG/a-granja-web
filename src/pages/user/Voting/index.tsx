@@ -3,31 +3,20 @@ import React, {useState, useEffect} from 'react';
 import './styles.css';
 import './response.css';
 
+import {User as UserInterface} from '../../../interfaces';
+import api from '../../../services/api';
+
 import modalSuccess from './components/closed';
 
 function Voting() {
-  interface User {
-    name: string;
-    photo: string;
-  }
-
-  const [users, setUsers] = useState<User[]>([]);
+  const [users, setUsers] = useState<UserInterface[]>([]);
 
   useEffect(() => {
-    setUsers([
-      {
-        name: 'Amelie',
-        photo: 'amelie.jpeg',
-      },
-      {
-        name: 'André',
-        photo: 'andre.jpeg',
-      },
-      {
-        name: 'Simplício',
-        photo: 'simplicio.jpeg',
-      },
-    ]);
+    (async () => {
+      const response = await api.get('/poll');
+
+      setUsers(response.data);
+    })();
   }, []);
 
   return (

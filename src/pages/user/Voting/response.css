@@ -1,16 +1,23 @@
 
 @media (max-width: 670px) {
+    .voting-background {
+        background-size: cover;
+    }
+
     .voting-container {
         width: auto;
         height: auto;
     }
+
     .voting-title {
         font-size: 20px;
     }
+
     .voting-grid {
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px;
     }
+
     .voting-button {
         padding:15px;
     }
@@ -19,6 +26,7 @@
     .voting-grid {
         grid-template-columns: 1fr;
     }
+    
     .participant-item {
         margin: auto;
     }

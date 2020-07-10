@@ -98,7 +98,7 @@
 }
 
 .voting-button {
-  margin-top: 15%;
+  margin-top: 6%;
   background-color: black;
   border: none;
   color: white;
@@ -120,5 +120,9 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.recaptcha {
+  margin-top: 4%;
 }
 

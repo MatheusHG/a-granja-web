@@ -65,10 +65,12 @@ function Voting() {
             }
           </div>
 
-          <ReCAPTCHA
-            sitekey={reCaptchaSecret}
-            onChange={handleCaptcha}
-          />
+          <div className="recaptcha">
+            <ReCAPTCHA
+              sitekey={reCaptchaSecret}
+              onChange={handleCaptcha}
+            />
+          </div>
 
           <button type="submit" className="voting-button" onClick={handleVote}>
           Votar

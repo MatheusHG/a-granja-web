@@ -27,7 +27,7 @@ const LoginAdmin = () => {
 
   useEffect(() => {
     if (isAuthenticated()) history.push('/admin');
-  }, []);
+  }, [history]);
 
   return (
     <div id="login-page-home">

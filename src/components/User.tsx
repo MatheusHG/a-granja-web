@@ -17,7 +17,7 @@ const User = (
   useEffect(() => {
     console.log('montou');
     if (mode === 'admin') setChecked(user.marked);
-  }, []);
+  }, [mode, user.marked]);
 
   return (
     <button

@@ -30,8 +30,8 @@ const HomeAdmin = () => {
     const newChosen = participants.filter((item) => {
       if (item.marked) {
         setChecked(true);
-        return item.marked;
       }
+      return item.marked;
     });
     setChosen(newChosen);
 

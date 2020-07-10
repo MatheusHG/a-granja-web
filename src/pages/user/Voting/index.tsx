@@ -7,7 +7,8 @@ import './response.css';
 import {User as UserInterface} from '../../../interfaces';
 import api from '../../../services/api';
 import User from '../../../components/User';
-import ClosedVoting from './components/closed';
+import ClosedVoting from './components/Closed/closed';
+import Success from './components/Success/success';
 
 function Voting() {
   const [captcha, setCaptcha] = useState<string | null>('');

@@ -120,9 +120,37 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: auto;
+}
+
+.closed-container h1 {
+  font-size: 46px;
+  color: sienna;
+  padding: 0px 15px;
+}
+
+.closed-container h3 {
+  font-size: 26px;
+  padding: 0px 15px;
 }
 
 .recaptcha {
   margin-top: 4%;
 }
 
+.success-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.success-container a {
+  margin-top: -160px;
+}
+
+.success-container h1 {
+  color: #040E19;
+  font-size: 36px;
+  margin-top: -40p; 
+  padding: 15px;
+}

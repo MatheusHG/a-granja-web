@@ -3,4 +3,5 @@ export interface User {
   photo: string;
   _id: string;
   points: number;
+  marked: boolean;
 }

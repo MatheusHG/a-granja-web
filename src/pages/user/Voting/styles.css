@@ -37,7 +37,7 @@
   width: 80%;
   max-width: 200px;
   min-height: 200px;
-  max-height: 300px;
+  max-height: 315px;
   border-radius:15px;
   margin: auto;
   border: 1px solid gray;
@@ -48,6 +48,15 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+.participant-item:disabled {
+  color: #333;
+  cursor: not-allowed;
+}
+
+.participant-item:disabled:hover {
+  cursor: not-allowed;
 }
 
 .participant-item:hover {
@@ -68,12 +77,24 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  margin-top: 15px;
   padding: 10px;
   font-size: 18px;
 }
 
 .participant-check > input {
   margin-right: 10px;
+}
+
+.participant-points {
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.participant-item:disabled .participant-check {
+  color: #888;
 }
 
 .voting-button {

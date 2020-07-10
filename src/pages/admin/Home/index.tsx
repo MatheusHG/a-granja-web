@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {AxiosResponse} from 'axios';
 import Modal from 'react-responsive-modal';
 import {useHistory} from 'react-router-dom';
 import Switch from 'react-switch';
@@ -23,13 +24,28 @@ const HomeAdmin = () => {
   const [alert, setAlert] = useState<boolean>(false);
 
   const getParticipants = async () => {
+    setUsers([]);
     const response = await api.get('/users');
-    setUsers(response.data);
+    const participants: UserInterface[] = response.data;
+
+    const newChosen = participants.filter((item) => {
+      if (item.marked) {
+        setChecked(true);
+        return item.marked;
+      }
+    });
+    setChosen(newChosen);
+
+    setUsers(participants);
   };
 
   useEffect(() => {
     getParticipants();
   }, []);
+
+  useEffect(() => {
+    console.log(chosen);
+  }, [chosen]);
 
   const handleSelect = (user: UserInterface, remove: boolean) => {
     if (remove) {
@@ -40,9 +56,11 @@ const HomeAdmin = () => {
     }
   };
 
-  const handleSwitch = (value: boolean) => {
-    console.log('alternado', value);
+  const handleSwitch = async (value: boolean) => {
     setChecked(value);
+
+    await api.put('/poll', value ? {users: chosen} : null);
+    getParticipants();
   };
 
   return (
@@ -71,7 +89,12 @@ const HomeAdmin = () => {
         <div className="admin-grid">
           {
             users.map((user: UserInterface) =>
-              <User onClick={handleSelect} user={user} key={user._id}/>,
+              <User
+                onClick={handleSelect}
+                user={user}
+                key={user._id}
+                disable={checked}
+              />,
             )
           }
         </div>

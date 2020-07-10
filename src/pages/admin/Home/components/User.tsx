@@ -3,9 +3,10 @@ import React, {useState, useEffect} from 'react';
 import {User as UserInterface} from '../../../../interfaces';
 
 const User = (
-    {onClick, user}: {
+    {onClick, user, disable}: {
       onClick(user: UserInterface, remove: boolean): void,
-      user: UserInterface
+      user: UserInterface,
+      disable: boolean,
     },
 ) => {
   const [checked, setChecked] = useState<boolean>(false);
@@ -23,18 +24,14 @@ const User = (
         onClick(user, checked);
         setChecked(!checked);
       }}
+      disabled={disable}
     >
       <img
         src={`${process.env.REACT_APP_API}/images/${user.photo}`}
         alt={user.name}
       />
       <h2 style={{margin: 5}}>{user.name}</h2>
-      <div style={{
-        fontSize: 18,
-        border: '1px solid red',
-        borderRadius: '8px',
-        padding: '3px'}}
-      >
+      <div className="participant-points">
         <p><strong>{user.points}</strong> votos</p>
       </div>
       <div className="participant-check" style={{padding: 5}}>

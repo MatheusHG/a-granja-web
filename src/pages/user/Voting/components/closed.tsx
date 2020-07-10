@@ -1,7 +1,6 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 
-import './styles.css';
 import animation from './urn.json';
 
 const close = () => {

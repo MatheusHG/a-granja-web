@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {AxiosResponse} from 'axios';
 import Modal from 'react-responsive-modal';
 import {useHistory} from 'react-router-dom';
 import Switch from 'react-switch';
@@ -8,7 +7,7 @@ import {FiLogIn} from 'react-icons/fi';
 import {User as UserInterface} from '../../../interfaces';
 import api from '../../../services/api';
 import {logout} from '../../../services/auth';
-import User from './components/User';
+import User from '../../../components/User';
 
 import './styles.css';
 import './response.css';
@@ -94,6 +93,7 @@ const HomeAdmin = () => {
                 user={user}
                 key={user._id}
                 disable={checked}
+                mode="admin"
               />,
             )
           }

@@ -113,3 +113,12 @@
   filter: opacity(94%);
 }
 
+.closed-container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+

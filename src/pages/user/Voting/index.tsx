@@ -5,52 +5,69 @@ import './response.css';
 
 import {User as UserInterface} from '../../../interfaces';
 import api from '../../../services/api';
-
-import modalSuccess from './components/closed';
+import User from '../../../components/User';
+import ClosedVoting from './components/closed';
 
 function Voting() {
+  const [isOut, setIsOut] = useState<boolean>(false);
   const [users, setUsers] = useState<UserInterface[]>([]);
+  const [
+    selected,
+    setSelected,
+  ] = useState<UserInterface | undefined>(undefined);
 
   useEffect(() => {
     (async () => {
       const response = await api.get('/poll');
+      const participants: UserInterface[] = response.data;
 
-      setUsers(response.data);
+      setIsOut(participants.length !== 3);
+      setUsers(participants);
     })();
   }, []);
 
+  const handleParticipant = (user: UserInterface) => {
+    setSelected(user);
+  };
+
+  const handleVote = async () => {
+    if (selected) {
+      await api.put('/users', {id: selected?._id});
+    }
+  };
+
   return (
-    <section className="voting-background">
-      <div className="voting-container">
-        <h1 className="voting-title">QUEM VOCÊ DESEJA ELIMINAR DA GRANJA?</h1>
+    !isOut ?
+    (
+      <section className="voting-background">
+        <div className="voting-container">
+          <h1 className="voting-title">QUEM VOCÊ DESEJA ELIMINAR DA GRANJA?</h1>
 
-        <div className="voting-grid">
-          {
-            users.map((user) => (
-              <button
-                key={Math.random()}
-                className="participant-item"
-                type="button"
-              >
-                <img
-                  src={`${process.env.REACT_APP_API}/images/${user.photo}`}
-                  alt={user.name}
+          <div className="voting-grid">
+            {
+              users.map((user) => (
+                <User
+                  user={user}
+                  onClick={handleParticipant}
+                  key={user._id}
+                  showPoints={false}
+                  disable={false}
+                  mode="voting"
+                  selectedUser={selected}
                 />
-                <h2>{user.name}</h2>
-                <div className="participant-check">
-                  <input type="checkbox"/>
-                  <p>VOTAR</p>
-                </div>
-              </ button>
-            ))
-          }
-        </div>
+              ))
+            }
+          </div>
 
-        <button type="submit" className="voting-button">
+          <button type="submit" className="voting-button" onClick={handleVote}>
           Votar
-        </button>
-      </div>
-    </section>
+          </button>
+        </div>
+      </section>
+    ) :
+    (
+      <ClosedVoting />
+    )
   );
 };
 

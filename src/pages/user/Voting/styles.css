@@ -26,15 +26,22 @@
   margin: 40px;
 }
 
+.grid-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 .voting-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   max-width: 700px;
   width: 100%;
+  grid-column-gap: 20px;
 }
 
 .participant-item {
-  width: 80%;
   max-width: 200px;
   min-height: 200px;
   max-height: 315px;

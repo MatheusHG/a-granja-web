@@ -13,6 +13,7 @@ import Success from './components/Success/success';
 function Voting() {
   const [captcha, setCaptcha] = useState<string | null>('');
   const [isOut, setIsOut] = useState<boolean>(false);
+  const [waiting, setWaiting] = useState<boolean>(false);
   const [users, setUsers] = useState<UserInterface[]>([]);
   const [
     selected,
@@ -24,7 +25,7 @@ function Voting() {
       const response = await api.get('/poll');
       const participants: UserInterface[] = response.data;
 
-      setIsOut(participants.length !== 3);
+      setIsOut(participants.length < 3 || participants.length > 4);
       setUsers(participants);
     })();
   }, []);
@@ -36,6 +37,9 @@ function Voting() {
   const handleVote = async () => {
     if (selected && captcha) {
       await api.put('/users', {id: selected?._id, clientResponse: captcha});
+      setWaiting(true);
+      setSelected(undefined);
+      setTimeout(() => setWaiting(false), 5000);
     }
   };
 
@@ -47,42 +51,48 @@ function Voting() {
     <section className="voting-background">
       {
           !isOut ? (
-            <div className="voting-container">
-              <h1 className="voting-title">
+            waiting ?
+            (
+              <Success />
+            ) :
+            (
+              <div className="voting-container">
+                <h1 className="voting-title">
                 QUEM VOCÊ DESEJA ELIMINAR DA GRANJA?
-              </h1>
+                </h1>
 
-              <div className="voting-grid">
-                {
-                  users.map((user) => (
-                    <User
-                      user={user}
-                      onClick={handleParticipant}
-                      key={user._id}
-                      showPoints={false}
-                      disable={false}
-                      mode="voting"
-                      selectedUser={selected}
-                    />
-                  ))
-                }
-              </div>
+                <div className={`voting-grid grid-${users.length}`}>
+                  {
+                    users.map((user) => (
+                      <User
+                        user={user}
+                        onClick={handleParticipant}
+                        key={user._id}
+                        showPoints={false}
+                        disable={false}
+                        mode="voting"
+                        selectedUser={selected}
+                      />
+                    ))
+                  }
+                </div>
 
-              <div className="recaptcha">
-                <ReCAPTCHA
-                  sitekey={reCaptchaSecret}
-                  onChange={handleCaptcha}
-                />
-              </div>
+                <div className="recaptcha">
+                  <ReCAPTCHA
+                    sitekey={reCaptchaSecret}
+                    onChange={handleCaptcha}
+                  />
+                </div>
 
-              <button
-                type="submit"
-                className="voting-button"
-                onClick={handleVote}
-              >
+                <button
+                  type="submit"
+                  className="voting-button"
+                  onClick={handleVote}
+                >
                 Votar
-              </button>
-            </div>
+                </button>
+              </div>
+            )
               ) :
               (
             <ClosedVoting />

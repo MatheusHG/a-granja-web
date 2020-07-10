@@ -31,7 +31,7 @@ const User = (
         borderRadius: '8px',
         padding: '3px'}}
       >
-        <p><strong>0</strong> votos</p>
+        <p><strong>{user.points}</strong> votos</p>
       </div>
       <div className="participant-check" style={{padding: 5}}>
         <input type="checkbox" checked={checked} readOnly/>

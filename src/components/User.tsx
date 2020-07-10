@@ -15,7 +15,6 @@ const User = (
   const [checked, setChecked] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log('montou');
     if (mode === 'admin') setChecked(user.marked);
   }, [mode, user.marked]);
 

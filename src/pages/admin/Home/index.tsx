@@ -42,10 +42,6 @@ const HomeAdmin = () => {
     getParticipants();
   }, []);
 
-  useEffect(() => {
-    console.log(chosen);
-  }, [chosen]);
-
   const handleSelect = (user: UserInterface, remove: boolean) => {
     if (remove) {
       const newChosen = chosen.filter((item) => item._id !== user._id);

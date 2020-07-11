@@ -62,7 +62,11 @@ const LoginAdmin = () => {
           />
         </div>
 
-        <button type="submit" onClick={handleSubmit}>
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          style={{cursor: 'pointer'}}
+        >
           <strong>Entrar</strong>
           <span>
             <FiLogIn size='20px' color='white' />

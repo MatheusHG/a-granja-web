@@ -31,3 +31,12 @@
         margin: auto;
     }
 }
+
+@media (max-width: 450px){
+    .closed-container h1{
+        font-size: 36px;
+    }
+    .closed-container h3 {
+        font-size: 23px;
+    }
+}

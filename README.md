@@ -4,7 +4,9 @@
 
 ## PROJETO
 
-Neste projeto está sendo desenvolvido um site para votação e apuração dos votos do reality de entretenimento online **"A Granja"**!
+Neste projeto está sendo desenvolvido um site para votação e apuração dos votos do reality de entretenimento online **"A Granja"**! <br/>
+
+<img src="https://user-images.githubusercontent.com/56003521/87214798-4ac70b00-c306-11ea-8b49-b48d6c6ae828.png" alt="link" width="25px" heigth="25px"/> **Link da aplicação:** https://agranja.netlify.app/
 
 ## EXECUTANDO
 

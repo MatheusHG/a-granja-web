@@ -1,9 +1,10 @@
 import React from 'react';
+import Modal from 'react-responsive-modal';
 import Lottie from 'react-lottie';
 
 import animation from './loading.json';
 
-const Loading = () => {
+const Loading = ({open}: {open: boolean}) => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -13,13 +14,13 @@ const Loading = () => {
     },
   };
   return (
-    <div>
+    <Modal open={open} center onClose={() => undefined} showCloseIcon={false}>
       <Lottie
         options={defaultOptions}
-        height={400}
-        width={400}
+        height={250}
+        width={250}
       />
-    </div>
+    </Modal>
   );
 };
 

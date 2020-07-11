@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-
 import {User as UserInterface} from '../interfaces';
+
+import './styles.css';
 
 const User = (
     {onClick, user, disable, showPoints = true, mode, selectedUser}: {

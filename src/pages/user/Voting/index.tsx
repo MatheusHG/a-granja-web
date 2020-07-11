@@ -7,12 +7,14 @@ import './response.css';
 import {User as UserInterface} from '../../../interfaces';
 import api from '../../../services/api';
 import User from '../../../components/User';
+import Loading from '../../../components/Loading';
 import ClosedVoting from './components/Closed/closed';
 import Success from './components/Success/success';
 
 function Voting() {
   const [captcha, setCaptcha] = useState<string | null>('');
   const [isOut, setIsOut] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const [waiting, setWaiting] = useState<boolean>(false);
   const [users, setUsers] = useState<UserInterface[]>([]);
   const [
@@ -22,11 +24,13 @@ function Voting() {
 
   useEffect(() => {
     (async () => {
+      setLoading(true);
       const response = await api.get('/poll');
       const participants: UserInterface[] = response.data;
 
       setIsOut(participants.length < 3 || participants.length > 4);
       setUsers(participants);
+      setLoading(false);
     })();
   }, []);
 
@@ -98,6 +102,7 @@ function Voting() {
             <ClosedVoting />
               )
       }
+      <Loading open={loading}/>
     </section>
   );
 };

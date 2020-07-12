@@ -36,7 +36,12 @@ const HomeUser = () => {
         </Link>
       </div>
       <img src={logo} alt="logo" width="250vw" height="250vh" />
-
+      <footer className="home-footer">
+        <h3>
+          Desenvolvido por <a href="https://github.com/MatheusHG">Matheus Henrique </a>
+          e <a href="https://github.com/davigsousa">Davi Gomes</a>
+        </h3>
+      </footer>
     </div>
   );
 };

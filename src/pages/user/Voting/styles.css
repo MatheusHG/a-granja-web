@@ -78,6 +78,22 @@
   padding: 0px 15px;
 }
 
+.closed-container .closed-footer {
+  width: 100% ;
+  margin-bottom: -30px;
+}
+
+.closed-container .closed-footer h3 {
+  color: black;
+  font-size: 14px; 
+  text-align: center; 
+  font-weight: lighter;
+}
+
+.closed-container .closed-footer h3 a {
+  color: brown;
+}
+
 .recaptcha {
   margin-top: 4%;
 }

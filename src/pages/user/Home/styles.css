@@ -82,24 +82,3 @@
     transition: 0.5s;
     background: rgba(14, 14, 14, 0.89);
 }
-
-.home-footer {
-    background-color: black; 
-    width: 100%;
-}
-
-.home-footer h3 {
-    color: white;
-    font-size: 14px;
-    text-align: center; 
-    font-weight: normal;
-}
-
-.home-footer h3 a {
-    color: goldenrod;
-    transition: 0.4s;
-}
-
-.home-footer h3 a:hover {
-    color: #a1a1a1;
-}

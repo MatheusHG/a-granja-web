@@ -23,12 +23,6 @@ const close = () => {
       <h3>
         Aguarde a apuração dos votos ou a inicialização do novo paredão...
       </h3>
-      <footer className="closed-footer">
-        <h3>
-          Desenvolvido por <a href="https://github.com/MatheusHG">Matheus Henrique </a>
-          e <a href="https://github.com/davigsousa">Davi Gomes</a>
-        </h3>
-      </footer>
     </div>
   );
 };

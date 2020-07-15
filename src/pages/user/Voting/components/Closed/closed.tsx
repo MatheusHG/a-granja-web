@@ -21,7 +21,7 @@ const close = () => {
       />
       <h1>Votações fora do ar!</h1>
       <h3>
-        Aguarde a apuração dos votos ou a inicialização do novo paredão...
+        Aguarde a apuração dos votos ou a inicialização da nova Roça...
       </h3>
     </div>
   );

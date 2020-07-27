@@ -19,7 +19,7 @@ const close = () => {
         height={400}
         width={400}
       />
-      <h1>Votações fora do ar!</h1>
+      <h1 style={{color: '#F6AE2D'}}>Votações fora do ar!</h1>
       <h3 style={{color: 'white'}}>
         Aguarde a apuração dos votos ou o início das votações para a Grande Final...
       </h3>

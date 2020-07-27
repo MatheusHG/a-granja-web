@@ -25,8 +25,8 @@ const HomeUser = () => {
       </Link>
       <div className="home-img">
         <Link to="/votar">
-          <strong style={{color: 'yellow'}}>A Grande Final da Granja</strong>
-          <span style={{backgroundColor: 'yellow'}}>
+          <strong style={{color: '#F6AE2D'}}>A Grande Final da Granja</strong>
+          <span style={{backgroundColor: '#F6AE2D'}}>
             <Lottie
               options={defaultOptions}
               height={60}

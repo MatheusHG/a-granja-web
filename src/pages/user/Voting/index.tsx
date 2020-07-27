@@ -43,7 +43,7 @@ function Voting() {
       await api.put('/users', {id: selected?._id, clientResponse: captcha});
       setWaiting(true);
       setSelected(undefined);
-      setTimeout(() => setWaiting(false), 5000);
+      setTimeout(() => setWaiting(false), 2500);
     }
   };
 
@@ -61,8 +61,8 @@ function Voting() {
             ) :
             (
               <div className="voting-container">
-                <h1 className="voting-title">
-                QUEM VOCÊ DESEJA ELIMINAR DA GRANJA?
+                <h1 className="voting-title" style={{color: '#F6AE2D'}}>
+                QUEM DEVE VENCER A GRANJA?
                 </h1>
 
                 <div className={`voting-grid grid-${users.length}`}>
@@ -92,6 +92,7 @@ function Voting() {
                   type="submit"
                   className="voting-button"
                   onClick={handleVote}
+                  style={{backgroundColor: '#F6AE2D'}}
                 >
                 Votar
                 </button>

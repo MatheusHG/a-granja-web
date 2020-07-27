@@ -1,7 +1,7 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 
-import animation from './success.json';
+import animation from './succeess.json';
 
 const success = () => {
   const defaultOptions = {
@@ -20,7 +20,7 @@ const success = () => {
         width={400}
         style={{marginTop: '-160px'}}
       />
-      <h1>Voto computado com Sucesso!</h1>
+      <h1 style={{color: 'white'}}>Voto computado com Sucesso!</h1>
     </div>
   );
 };

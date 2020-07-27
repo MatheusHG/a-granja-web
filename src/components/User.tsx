@@ -29,12 +29,13 @@ const User = (
         onClick(user, checked);
       }}
       disabled={disable}
+      style={{backgroundColor: '#F6AE2D'}}
     >
       <img
         src={`${process.env.REACT_APP_API}/images/${user.photo}`}
         alt={user.name}
       />
-      <h2 style={{margin: 5}}>{user.name}</h2>
+      <h2 style={{margin: 5, color: 'white'}}>{user.name}</h2>
       {showPoints && (
         <div className="participant-points">
           <p><strong>{user.points}</strong> votos</p>
@@ -46,7 +47,7 @@ const User = (
           checked={mode === 'admin' ? checked : selectedUser?._id === user._id}
           readOnly
         />
-        <p>{mode === 'admin' ? 'SELECIONAR' : 'VOTAR'}</p>
+        <p style={{color: 'black'}}>{mode === 'admin' ? 'SELECIONAR' : 'VOTAR'}</p>
       </div>
     </ button>
   );

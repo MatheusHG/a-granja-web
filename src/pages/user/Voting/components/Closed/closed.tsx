@@ -1,7 +1,7 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 
-import animation from './succeess.json';
+import animation from './mill.json';
 
 const close = () => {
   const defaultOptions = {
@@ -21,7 +21,7 @@ const close = () => {
       />
       <h1 style={{color: '#F6AE2D'}}>Votações fora do ar!</h1>
       <h3 style={{color: 'white'}}>
-        Aguarde a apuração dos votos ou o início das votações para a Grande Final...
+        Aguarde para a nova Temporada...
       </h3>
     </div>
   );
